@@ -1,0 +1,24 @@
+#include <stdio.h>
+void output(int x)
+{
+	printf("百位：%d\n", x /100);
+	printf("十位：%d\n", (x/10) %10);
+	printf("个位：%d\n", x % 10);
+}
+int main()
+{
+	int a;
+	scanf_s("%d", &a);
+	while (1)
+	{
+		if (a >0 && a <1000)
+		{
+			output(a);
+				break;
+		}
+		else printf("输入错误，请重新输入\n");
+	}
+	
+
+		return 0;
+}
