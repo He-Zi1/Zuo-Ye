@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+	int n = 0;
+	int se = 0;
+	scanf_s("%d", &n);
+	if (n >= 0 && n <= 40)
+	{
+		if (n <= 10)
+		{
+			se = n * 6;
+			printf("得分：%d\n", se);
+		}
+		else if (n <= 20)
+		{
+			se = 60 + (n - 10) * 2;
+			printf("得分：%d\n", se);
+		}
+		else
+		{
+			se = 80 + (n - 20);
+			printf("得分:%d\n", se);
+		}
+	}
+	else printf("输入错误\n");
+}
