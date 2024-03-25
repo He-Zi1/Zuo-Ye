@@ -6,7 +6,7 @@ void output(float x)
 	float rd, m;
 	rd = (x / 2) * (x / 2) * 3.14;
 	m = sq - rd;
-	printf("%.2f", m);
+	printf("面积差为:%.2f", m);
 }
 int main()
 {
