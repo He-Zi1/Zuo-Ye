@@ -1,0 +1,17 @@
+#include<stdio.h>
+void output(float x)
+{
+	float sq;
+	sq = x * x;
+	float rd, m;
+	rd = (x / 2) * (x / 2) * 3.14;
+	m = sq - rd;
+	printf("%.2f", m);
+}
+int main()
+{
+	float a;
+	scanf_s("%f", &a);
+	output(a);
+    return 0;
+}
