@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+	int i,n;
+	float ave = 0;
+	scanf_s("%d", &n);//输入人数
+	int age,sum;
+	sum = 0;//设置年龄
+	for (i = 0; i < n; i++)
+	{
+		scanf_s("%d", &age);
+		if (age < 55 && age>15)
+			 sum = age+sum;
+		else printf("输入错误\n");
+	}
+	ave =(float) sum / n;//求平均年龄
+	printf("%.2f", ave);
+}
