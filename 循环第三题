@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n;
+	scanf_s("%d", &n);//输入月数
+	int sum;
+	while (1)
+	{
+		int n1,n2;
+		if (n > 2 && n < 30)
+		{
+			int i;
+			n1 = 1, n2 = 1;
+			for (i = 3;i<=n; i++)//利用斐波那契数列求解
+			{
+				sum = n1 + n2;
+				n1 = n2;
+				n2 = sum;
+			}
+			break;
+		}
+		else printf("输入错误，请重新输入");
+	}
+	printf("总和为：%d\n", sum);
+}
