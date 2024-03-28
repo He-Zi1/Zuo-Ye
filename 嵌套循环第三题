@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf_s("%d", &n);//输入要猜的数
+	while (1)
+	{
+		if (n > 0 && n < 100)
+		{
+			int lf, rg;//设置猜测范围的两端值
+			lf = 0;
+			rg = 100;
+			int mid = (lf + rg) / 2;
+			printf("%d\n", mid);
+			while (1)
+			{
+				if (mid > n)
+				{
+					rg = mid;
+					mid = (lf + rg) / 2;
+					printf("%d\n", mid);
+					continue;
+				}
+				else if (mid < n)
+				{
+					lf = mid;
+					mid = (lf + rg) / 2;
+					printf("%d\n", mid);
+					continue;
+				}
+				else
+				{
+					break;
+				 }
+			}
+		}
+		break;
+	}
+}
