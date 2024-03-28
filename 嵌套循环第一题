@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+	int i, j;
+	for (i = 1; i <= 9; i++)
+	{
+		for (j = 1; j <= i; j++)
+		{
+			printf("%d*%d=%-2d ", j, i, i * j);//每个乘法公式
+		}
+		printf("\n");//换行打印
+	}
+	return 0;
+}
