@@ -1,24 +1,22 @@
 #include<stdio.h>
 int main()
 {
-	int m,n;//设置初始高度和回弹次数
-	scanf_s("%d%d", &m,&n);
+	int m, n;//设置初始高度和回弹次数
+	scanf_s("%d%d", &m, &n);
 	double hit;//第n次回弹高度
 	double sum = (double)m;//经过的距离
 	while (1)
 	{
-		if (n > 0 && n < 50&&m<2000&&m>0)
+		if (n > 0 && n < 50 && m < 2000 && m>0)
 		{
 			int i;
 			hit = (double)m;
-			for (i = 0;i<n; i++)//计算每次回弹的高度
+			for (i = 0; i < n; i++)//计算每次回弹的高度
 			{
 				hit = hit / 2;
+				sum += hit * 2;//第一次回弹开始每次回弹都是来回两次
 			}
-			for (i = 1; i <= n; i++)
-			{
-				sum += m / (1 << i);
-			}
+			sum -= hit;//第n次回弹还没落下
 			break;
 		}
 		else printf("输入错误，请重新输入");
