@@ -1,0 +1,53 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+void print(int n)
+{
+	int arr[100] = { 0 };//用于存储输入的数据，假设最多输入100个数据
+	int i = 0;
+	for (i = 0; i < n; i++)//开始输入每个数组元素数据
+	{
+		while (1)
+		{
+			int m = 0;
+			printf("请输入->\n");
+			scanf("%d", &m);
+			if (m < 0)//判断数据是否符合条件
+				printf("输入错误\n");
+			else
+			{
+				arr[i] = m;
+				break;
+			}
+		}
+	}
+	int x;
+	for (x = 0; x < n; x++)
+	{
+		int y;
+		for (y = x+1; y < n; y++)
+		{
+			if (arr[x] == arr[y])//筛出相同数据
+				arr[y] = 0;
+		}
+	}
+	for (i = 0; i < n; i++)
+	{
+		if (arr[i] != 0)
+			printf("%d ", arr[i]);//打印无重复的数据
+	}
+}
+int main()
+{
+	int n;
+	scanf_s("%d", &n);//输入数据数量
+	while (1)
+	{
+		if (n > 1 && n < 100)
+		{
+			print(n);
+			break;
+		}
+		else printf("输入错误\n");
+	}
+	return 0;
+}
