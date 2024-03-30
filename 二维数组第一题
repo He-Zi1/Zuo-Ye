@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+void print(int n)
+{
+	int arr[100][100] = { 0 };
+	int i;
+	for (i = 0; i<n; i++)
+	{
+		int  j = 0;
+		for (j = 0; j < n; j++)
+		{
+			printf("请输入\n");
+			scanf("%d", &arr[i][j]);//输入数组的元素
+		}
+	}
+	for (i = 0; i<n; i++)
+	{
+		int j;
+		for (j =i+1; j<n; j++)//进行转置
+		{
+			int tem;
+			 tem = arr[i][j];
+			 arr[i][j] = arr[j][i];
+			 arr[j][i] = tem;
+		}
+	}
+	for (i = 0; i < n; i++)
+	{
+        int j = 0;
+		for (j = 0; j<n; j++)
+		{
+			printf("%d ",arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int n;
+	while (1)
+	{
+		scanf("%d", &n);//输入矩形边长
+		if (n > 1 && n < 10)
+			break;
+		else printf("输入错误\n");
+	}
+	print(n);
+	return 0;
+}
