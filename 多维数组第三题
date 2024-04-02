@@ -1,0 +1,46 @@
+#include<stdio.h>
+void rec(int n)
+{
+   int arr1[100][100]={0};//初始化矩阵
+   int i,j;
+   for(i=0;i<n;i++)//输入矩阵各元素
+   {
+   for(j=0;j<n;j++)
+   {
+   printf("请输入:\n");
+   scanf("%d",&arr1[i][j]);
+   }
+   printf("\n");
+   }
+   int arr2[100][100]={0};//初始化翻转矩阵
+   for(i=0;i<n;i++)
+   {
+   for(j=0;j<n;j++)
+   {
+   arr2[i][j]=arr1[n-j-1][i];//对原矩阵进行翻转
+   }
+   }
+   for(i=0;i<n;i++)
+   {
+   for(j=0;j<n;j++)
+   {
+   printf("%d ",arr2[i][j]);
+   }
+   printf("\n");
+   }
+   
+}
+int main()
+{
+   int n;
+   while(1)
+   {
+     scanf("%d",&n);//输入矩阵边长
+     if(n>1&&n<10)
+     break;
+     else printf("输入错误\n");
+   }
+   rec(n);
+   return 0;
+}
+    
