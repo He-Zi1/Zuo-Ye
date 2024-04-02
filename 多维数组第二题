@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void thp(int n)
+{
+    int arr1[10][10] = { 0 };//初始化三角形
+    arr1[0][0] = 1;
+    int i, j;
+    for (i = 1; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            if (j == 0)
+                arr1[i][j] = 1;
+            else arr1[i][j] = arr1[i - 1][j - 1] + arr1[i - 1][j];//下一行的每个元素是其正上方和左上方元素之和
+        }
+    }
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < i + 1; j++)
+        {
+            printf("%d ", arr1[i][j]);
+        }
+        printf("\n");
+    }
+
+}
+int main()
+{
+    int n;
+    while (1)
+    {
+        printf("请输入\n");
+        scanf("%d", &n);//输入高度
+        if (n > 1 && n < 10)
+            break;
+        else printf("输入错误\n");
+    }
+    thp(n);
+    return 0;
+}
